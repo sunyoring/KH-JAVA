@@ -1,8 +1,5 @@
 package com.kh.run;
 
-import com.kh.variable.C_Overflow;
-import com.kh.variable.D_Cast;
-import com.kh.variable.E_printf;
 import com.kh.variable.F_Keyboardinput;
 
 public class Run {
@@ -31,7 +28,9 @@ public class Run {
 //		e.printfMethod();
 		
 		F_Keyboardinput f = new F_Keyboardinput();
-		f.inputScanner1();
+//		f.inputScanner1();
+//		f.inputScanner2();
+		f.inputScanner3();
 	}
 
 }
