@@ -176,21 +176,130 @@ public class A_For {
 		if (dan > 1 && dan < 10) {
 			for (int i = 1; i < 10; i++) {
 //				System.out.println(dan + " * " + i + " = " + dan * i);
-				System.out.printf("%d * %d = %d\n",dan,i,dan*i);
+				System.out.printf("%d * %d = %d\n", dan, i, dan * i);
 			}
 		} else {
 			System.out.println("2~9사이의 양수를 입력하세요.");
 		}
 
 	}
+
 	public void method11() {
-		int random = (int)Math.random()*8+2;
-									// 0.0 <= < 1.0
-									// 0.0 <= < 8.0 (*8 했을 때)
-									// 2.0 <= < 10.0 (+2했을 때)
-									// 2   <= < 10 (int) 형 변환했을 때
-		for (int i = 1 ; i < 10; i++) {
-			System.out.printf("%d * %d = %d\n",random,i,random*i);
+		int random = (int) Math.random() * 8 + 2;
+		// 0.0 <= < 1.0
+		// 0.0 <= < 8.0 (*8 했을 때)
+		// 2.0 <= < 10.0 (+2했을 때)
+		// 2 <= < 10 (int) 형 변환했을 때
+		System.out.println("=====" + random + "=====");
+		for (int i = 1; i < 10; i++) {
+			System.out.printf("%d * %d = %d\n", random, i, random * i);
+		}
+	}
+
+	// 중첩 for문
+	/*
+	 * for(초기식1; 조건식1; 증감식1) { 수행할 문장 1;
+	 * 
+	 * for(초기식2; 조건식2; 증감식2){ 수행할 문장 2; }
+	 * 
+	 * 수행할 문장 3; }
+	 * 
+	 */
+	public void method12() {
+		// 1부터 5까지 연이어서 출력되는 문장을 3줄 출력
+		// 1 2 3 4 5
+		// 1 2 3 4 5
+		// 1 2 3 4 5
+		for (int i = 1; i <= 3; i++) {
+			for (int j = 1; j <= 5; j++) {
+				System.out.print(j + " ");
+			}
+			System.out.println(" ");
+		}
+
+	}
+
+	public void method13() {
+		// 2단부터 9단까지 출력
+		// 단 2~0 까지 1씩 증가 --> 바깥 for문
+		// 곱ㅎ재니는 수 매 단마다 1부터 9까지 1씩 증가 --> 안쪽 for문
+
+		// ==2단==
+
+		// 2 * 1 = 2
+		// 2 * 2 = 4
+		// 2 * 3 = 6
+		// ...
+		// 2 * 8 = 18
+
+		// ==3단==
+
+		// 3 * 1 = 3
+		// 3 * 2 = 6
+		// 3 * 3 = 0
+
+		// ..
+
+		// ==9단==
+		// 9 * 1 = 9
+		// 9 * 2 = 18
+
+		for (int dan = 2; dan <= 9; dan++) {
+			System.out.println("=== " + dan + "단 ===");
+			for (int su = 1; su <= 9; su++) {
+				System.out.println(dan + " * " + su + " = " + dan * su);
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void method14() {
+		// *****
+		// *****
+		// *****
+		// *****
+
+		// 행이 1~4 까지 반복 (4번) --> 바깥 for문
+		// 열이 1~5 까지 (5번) --> 안쪽 for문
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 5; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+	public void method15() {
+		// 1***
+		// *2**
+		// **3*
+		// ***4
+		for (int i = 1; i <= 4; i++) {
+			for (int j = 1; j <= 4; j++) {
+				if (i == j) {
+					System.out.print(i);
+				} else {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void method16() {
+		// *
+		// **
+		// ***
+		// ****
+		// *****
+		for (int i = 1; i <= 5; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
 		}
 	}
 
