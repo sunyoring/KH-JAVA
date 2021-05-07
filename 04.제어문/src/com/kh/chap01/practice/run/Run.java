@@ -6,7 +6,7 @@ public class Run {
 
 	public static void main(String[] args) {
 		ConditionPractice cp = new ConditionPractice();
-		cp.method9();
+		cp.practice9();
 	}
 
 }

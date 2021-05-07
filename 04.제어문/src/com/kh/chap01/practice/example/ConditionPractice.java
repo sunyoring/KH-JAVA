@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ConditionPractice {
 
-	public void method1() {
+	public void practice1() {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("1. 입력");
@@ -32,7 +32,7 @@ public class ConditionPractice {
 
 	}
 
-	public void method2() {
+	public void practice2() {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 		if (num > 0) {
@@ -46,7 +46,7 @@ public class ConditionPractice {
 		}
 	}
 
-	public void method3() {
+	public void practice3() {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("국어점수 : ");
@@ -76,7 +76,7 @@ public class ConditionPractice {
 
 	}
 
-	public void method4() {
+	public void practice4() {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("1~12 사이의 정수 입력 : ");
@@ -112,7 +112,7 @@ public class ConditionPractice {
 
 	}
 
-	public void method5() {
+	public void practice5() {
 		Scanner sc = new Scanner(System.in);
 
 		String user = "서뇨";
@@ -135,7 +135,7 @@ public class ConditionPractice {
 
 	}
 
-	public void method6() {
+	public void practice6() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("권한을 확인하고자 하는 회원 등급 : ");
 
@@ -159,7 +159,7 @@ public class ConditionPractice {
 
 	}
 
-	public void method7() {
+	public void practice7() {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("키(m)를 입력해 주세요 : ");
@@ -186,7 +186,7 @@ public class ConditionPractice {
 		System.out.println(a);
 	}
 
-	public void method8() {
+	public void practice8() {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("피연산자1 입력 : ");
@@ -224,7 +224,7 @@ public class ConditionPractice {
 		System.out.printf("%d %s %d = %d", num1, ch, num2, result);
 	}
 
-	public void method9() {
+	public void practice9() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("중간 고사 점수 : ");
 		double middleTest = sc.nextDouble();
@@ -279,7 +279,7 @@ public class ConditionPractice {
 //		}
 	}
 
-	public void method10() {
+	public void practice10() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("1. 메뉴출력");
 		System.out.println("2. 짝수 / 홀수");
@@ -294,31 +294,31 @@ public class ConditionPractice {
 		int num = sc.nextInt();
 		switch (num) {
 		case 1:
-			method1();
+			practice1();
 			break;
 		case 2:
-			method2();
+			practice2();
 			break;
 		case 3:
-			method3();
+			practice3();
 			break;
 		case 4:
-			method4();
+			practice4();
 			break;
 		case 5:
-			method5();
+			practice5();
 			break;
 		case 6:
-			method6();
+			practice6();
 			break;
 		case 7:
-			method7();
+			practice7();
 			break;
 		case 8:
-			method8();
+			practice8();
 			break;
 		case 9:
-			method9();
+			practice9();
 			break;
 		default:
 			return;
