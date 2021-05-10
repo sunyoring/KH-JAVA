@@ -20,12 +20,16 @@ public class LoopPractice {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("1이상의 숫자를 입력하세요 : ");
 		int num = sc.nextInt();
-		for (int i = 0; i < num; i++) {
-			if (i < 0) {
+		while (true) {
+			if (num >= 1) {
+				for (int i = 0; i < num; i++) {
+					System.out.print(i + " ");
+					break;
+				}
+			} else {
 				System.out.println("잘못입력하셨습니다. 다시 입력해주세요");
-				continue;
+
 			}
-			System.out.print(i + " ");
 		}
 
 	}
@@ -35,32 +39,26 @@ public class LoopPractice {
 		System.out.println("1이상의 숫자를 입력하세요 : ");
 		int num = sc.nextInt();
 
-		for (int i = num; i <= 1; i--) {
-			if (num < 1) {
-				System.out.println("잘못입력하셨습니다.");
-			} else {
-				System.out.print(i + " ");
-
-			}
-
-		}
+		
 
 	}
 
 	public void practice4() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("1이상의 숫자를 입력하세요 : ");
-		int num = sc.nextInt();
-
-		for (int i = num; i <= 1; i--) {
-			if (num < 1) {
-				System.out.println("잘못입력하셨습니다. 다시 입력해주세요");
-				continue;
+		
+		while(true) {
+			
+			System.out.println("1이상의 숫자를 입력하세요 : ");
+			int num = sc.nextInt();
+		
+			if(num >= 1) {
+				for ( int i = num; i >=1; i--) {
+					System.out.print(i + " ");
+				}
+				break;
 			} else {
-				System.out.print(i + " ");
-
+				System.out.println("1 이상의 숫자를 입력해주세요.");
 			}
-
 		}
 
 	}
@@ -77,7 +75,6 @@ public class LoopPractice {
 				if (i == j) {
 					System.out.print(" + ");
 					continue;
-
 				}
 			}
 		}
@@ -92,18 +89,25 @@ public class LoopPractice {
 		int num1 = sc.nextInt();
 		System.out.println("두 번째 숫자 : ");
 		int num2 = sc.nextInt();
-		
-		if(num1 >= 1 && num2 >= 1) {
+
+		if (num1 >= 1 && num2 >= 1) {
+			/*
+			 * int min = Math.min(num1, num2);	// 두 수 중 작은 값 담기
+		 	 * int max = Math.max(num1, num2); // 두 수 중 큰 값 담기
+			 * 
+			 * for(int i = min; i <= max; i++){ }
+			 * 
+			 * */
 			for (; num1 <= num2; num1++) {
 				System.out.print(num1 + " ");
 			}
 			for (; num2 <= num1; num2++) {
 				System.out.print(num2 + " ");
 			}
-		}else {
+		} else {
 			System.out.println("1이상의 숫자만 입력해주세요");
 		}
-		
+
 	}
 
 	public void practice7() {
@@ -114,19 +118,18 @@ public class LoopPractice {
 			int num1 = sc.nextInt();
 			System.out.println("두 번째 숫자 : ");
 			int num2 = sc.nextInt();
-			
-			if(num1 >= 1 && num2 >= 1) {
+
+			if (num1 >= 1 && num2 >= 1) {
 				for (; num1 <= num2; num1++) {
 					System.out.print(num1 + " ");
 				}
 				for (; num2 <= num1; num2++) {
 					System.out.print(num2 + " ");
 				}
-			}else {
+				break;
+			} else {
 				System.out.println("1이상의 숫자만 입력해주세요");
-				continue;
 			}
-			
 
 		}
 
