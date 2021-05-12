@@ -112,7 +112,8 @@ public class DimensionPractice {
 
 			for (int i = 0; i < arr.length; i++) {
 				for (int j = 0; j < arr[i].length; j++) {
-					arr[i][j] = (char)(Math.random() * 26 + 65);
+					arr[i][j] = (char)(Math.random() * 26 + 65); 
+					// (int)Math.random()+n --> 0부터 n아래까지의 숫자이므로 원하는 범위가 있다면 (최대값-최소값)곱해준 후 최소값을 더해다.
 				}
 			}
 			for (int i = 0; i < arr.length; i++) {
