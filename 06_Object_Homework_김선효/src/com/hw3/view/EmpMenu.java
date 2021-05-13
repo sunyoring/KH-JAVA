@@ -92,7 +92,7 @@ public class EmpMenu {
 		return new Employee(empName,dept,job,age,gender,salary,bonusPoint,phone,address);
 	}
 	
-	private void modifyEmployee(Employee emp2) {
+	private void modifyEmployee(Employee emp) {
 		Scanner sc = new Scanner(System.in);
 
 		while (true) {
@@ -110,27 +110,27 @@ public class EmpMenu {
 				sc.nextLine();
 				System.out.println("이름 : ");
 				String name = sc.nextLine();
-				emp2.setEmpName(name);
+				emp.setEmpName(name);
 				break;
 			case 2:
 				System.out.println("급여 : ");
 
 				int salary = sc.nextInt();
-				emp2.setSalary(salary);
+				emp.setSalary(salary);
 				break;
 			case 3:
 				sc.nextLine();
 				System.out.println("부서 : ");
 
 				String dept = sc.nextLine();
-				emp2.setDept(dept);
+				emp.setDept(dept);
 				break;
 			case 4:
 				sc.nextLine();
 				System.out.println("직급 : ");
 
 				String job = sc.nextLine();
-				emp2.setDept(job);
+				emp.setDept(job);
 				break;
 			case 9:
 				return;
