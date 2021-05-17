@@ -28,19 +28,23 @@ public class Run {
 
 		emp[1].setDept("기획부");
 		emp[1].setJob("부장");
+		emp[1].setSalary(4000000);
+		emp[1].setBonusPoint(0.3);
 
 		System.out.println(emp[0].information());
 		System.out.println(emp[1].information());
 		System.out.println("=================================================================");
 
+		int year = 0;
 		for (Employee e : emp) {
-			System.out.println(e.getEmpName() + "의 연봉 : " + e.getSalary() + (e.getSalary() * e.getBonusPoint()) + "원");
+			year = (e.getSalary() + (int)(e.getSalary() * e.getBonusPoint()))*12;
+			System.out.println(e.getEmpName() + "의 연봉 : " + year + "원");
 		}
 
 		System.out.println("=================================================================");
 		int sum = 0;
 		for (Employee e : emp) {
-		sum +=e.getSalary() + (e.getSalary() * e.getBonusPoint());
+		sum += year;
 		}
 		System.out.println("직원들의 연봉의 평균 : " + sum/emp.length);
 	}

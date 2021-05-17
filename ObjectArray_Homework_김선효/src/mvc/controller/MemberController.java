@@ -69,7 +69,6 @@ public class MemberController {
 
 		return searchMember;
 
-
 	}
 
 	public void updateMember(Member m, int menu, String update) {
@@ -135,8 +134,19 @@ public class MemberController {
 	}
 
 	public Member[] sortAgeAsc() {
+		Member[] copy = mem.clone();
+		Member[] temp = new Member[1];
+		for (int i = 0; i < copy.length; i++) {
+			for (int j = i + 1; j < i; j++) {
+				if (copy[i].getAge() > copy[j].getAge()) {
+					temp[0] = copy[i];
+					copy[i] = copy[j];
+					copy[j] = temp[0];
 
-		return mem;
+				}
+			}
+		}
+		return copy;
 
 	}
 

@@ -184,6 +184,7 @@ public class MemberMenu {
 
 	public void sortMember() {
 		Member[] sortMem = null; // 정렬 결과를 받아 줄 객체배열 초기화
+		int index = 0;
 		// 메뉴 출력 >> 반복 실행 처리함
 		while (true) {
 			System.out.println("====== 회원 정보 정렬 ======");
@@ -223,7 +224,11 @@ public class MemberMenu {
 				break;
 			}
 			// 반복문을 통해 sortMem 객체 배열 출력
+			for(int i =0; i<sortMem.length; i++) {
+				sortMem[i].information();
+			}
 		}
+		
 
 	}
 
