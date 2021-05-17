@@ -118,6 +118,7 @@ public class MemberMenu {
 	public void updateMember() {
 		// 메뉴 출력 >> 반복 실행 처리함
 		while (true) {
+
 			System.out.println("====== 회원 정보 수정 ======");
 			System.out.println("1. 비밀번호 수정");
 			System.out.println("2. 이름 수정");
@@ -125,29 +126,29 @@ public class MemberMenu {
 			System.out.println("9. 이전 메뉴로");
 			System.out.println("메뉴 선택 : "); // >> 키보드로 입력 받기 (menu : int)
 			int menu = sc.nextInt();
-			sc.nextLine();
-			if (menu == 9) {
-				mainMenu();
-				return;
-			} else {
-				System.out.println("변경할 회원 아이디 : "); // >> 키보드로 입력 받기 (userId : String)
+
+			switch (menu) {
+			case 1:
+			case 2:
+			case 3:
+				System.out.println("변경할 회원 아이디 : ");
+				sc.nextLine();
 				String userId = sc.nextLine();
-				Member m = mc.checkId(userId);
-
-				if (mc.checkId(userId) == null) {
-					System.out.println("변경할 회원이 존재하지 않습니다.");
-				} else {
+				if (mc.checkId(userId) != null) {
+					Member m = mc.checkId(userId);
+					System.out.println("변경할 내용 : ");
 					String update = sc.nextLine();
-					/* mc.updateMember(m, menu, update); */
-					System.out.println("회원의 정보가 변경되었습니다.");
+					mc.updateMember(m, menu, update);
+					System.out.println("회원 정보가 변경되었습니다.");
+				} else {
+					System.out.println("해당하는 회원이 존재하지 않습니다.");
 				}
-				// 1. MemberController의 checkId()로 userId 전달 >> 결과 값 (m : Member)
-				// 1_2. 결과 값이 null인경우 >> “변경할 회원이 존재하지 않습니다” 출력
-				// 1_2. 결과 값이 null이 아닌 경우 기존 정보 출력 후
-				// 변경내용(update : String) 입력 받고
-				// MemberController의 updateMember()에 m, menu, update 전달
-				// “회원의 정보가 변경되었습니다.” 출력
-
+				break;
+			case 9:
+				return;
+			default:
+				System.out.println("다시 입력해주세요.");
+				break;
 			}
 
 		}
@@ -172,14 +173,11 @@ public class MemberMenu {
 	}
 
 	public void printAllMember() {
-
 		Member[] mem = mc.getMem();
-		for (Member m : mem) {
-
-			System.out.println(m.information());
+		for (int i = 0; i < mc.getMemberCount(); i++) {
+			System.out.println(mem[i].information());
 		}
-		// MemberController의 getMem() 메소드 호출 >> 결과 값 (mem : Member[])
-		// 반복문을 통해 결과 값 안의 존재하는 회원들 정보 출력
+
 	}
 
 	public void sortMember() {
@@ -224,11 +222,11 @@ public class MemberMenu {
 				break;
 			}
 			// 반복문을 통해 sortMem 객체 배열 출력
-			for(int i =0; i<sortMem.length; i++) {
-				sortMem[i].information();
+			for (int i = 0; i < mc.getMemberCount(); i++) {
+				System.out.println(sortMem[i].information());
+
 			}
 		}
-		
 
 	}
 

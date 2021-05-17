@@ -72,36 +72,20 @@ public class MemberController {
 	}
 
 	public void updateMember(Member m, int menu, String update) {
-		switch (menu) {
-		case 1:
-			for (int i = 0; i < memberCount; i++) {
-				if (mem[i].getUserId().equals(m.getUserId())) {
-					mem[i].setUserPwd(update);
-				}
-			}
-			break;
-		case 2:
-			for (int i = 0; i < memberCount; i++) {
-				if (mem[i].getUserId().equals(update)) {
-					mem[i].setName(update);
-				}
-			}
-			break;
-		case 3:
-			for (int i = 0; i < memberCount; i++) {
-				if (mem[i].getUserId().equals(update)) {
-					mem[i].setEmail(update);
-				}
-			}
-			break;
-		default:
-			System.out.println("메뉴를 잘못 선택하였습니다. ");
-			break;
+		if (menu == 1) {
+			m.setUserPwd(update);
+		} else if (menu == 2) {
+			m.setName(update);
+
+		} else {
+			m.setEmail(update);
+
 		}
 		// 매개변수로 전달받은 m 회원과 변경 내용인 update 문자열을 menu에 따라
 		// 1 인 경우 setter 메소드를 이용하여 m의 비밀번호를 update 문자열로 변경
 		// 2 인 경우 setter 메소드를 이용하여 m의 이름을 update 문자열로 변경
 		// 3 인 경우 setter 메소드를 이용하여 m의 이메일을 update 문자열로 변경
+
 	}
 
 	public void deleteMember(String userId) {
@@ -118,30 +102,50 @@ public class MemberController {
 	}
 
 	public Member[] sortIdAsc() {
-		// 기존의 회원 객체 배열(mem)을 변경하지 않고 단지 정렬된 결과만을 보여주기 위해
-		// 기존의 배열 복사해서 사용 (clone(), System.arraycopy() 둘 중 하나 사용해서 복사)
 		Member[] copy = mem.clone();
+		Member temp = null;
 
-		// copy 배열을 아이디 별 오름차순 정렬 진행
-		// --> HINT : String 클래스의 compareTo() 메소드 활용
-		// copy 주소 값 리턴
+		for(int i = 0; i<memberCount; i++) {
+			for(int j =0; j<i; j++) {
+				if(copy[i].getUserId().compareTo(copy[j].getUserId())==-1) {
+					temp = copy[i];
+					copy[i] = copy[j];
+					copy[j] = temp;
+				}
+			}
+		}
+		
 		return copy;
 	}
 
 	public Member[] sortIdDesc() {
-		return mem;
+		Member[] copy = mem.clone();
+		Member temp = null;
+
+		for(int i = 0; i<memberCount; i++) {
+			for(int j =0; j<i; j++) {
+				if(copy[i].getUserId().compareTo(copy[j].getUserId())==1) {
+					temp = copy[i];
+					copy[i] = copy[j];
+					copy[j] = temp;
+				}
+			}
+		}
+		
+		
+		return copy;
 		// 위와 동일한 방식이지만 내림차순으로 정렬 후 주소 값 리턴
 	}
 
 	public Member[] sortAgeAsc() {
 		Member[] copy = mem.clone();
-		Member[] temp = new Member[1];
-		for (int i = 0; i < copy.length; i++) {
-			for (int j = i + 1; j < i; j++) {
+		Member temp = null;
+		for (int i = 0; i < memberCount; i++) {
+			for (int j = 0; j < i; j++) {
 				if (copy[i].getAge() > copy[j].getAge()) {
-					temp[0] = copy[i];
+					temp = copy[i];
 					copy[i] = copy[j];
-					copy[j] = temp[0];
+					copy[j] = temp;
 
 				}
 			}
@@ -151,36 +155,41 @@ public class MemberController {
 	}
 
 	public Member[] sortAgeDesc() {
-		for (int i = 0; i < mem.length; i++) {
-			for (int j = i + 1; j < i; j++) {
-				if (mem[i].getAge() < mem[j].getAge()) {
-					Member temp = mem[i];
-					mem[i] = mem[j];
-					mem[j] = temp;
+		Member[] copy = mem.clone();
+		Member temp = null;
+		
+		for (int i = 0; i < memberCount; i++) {
+			for (int j =0; j < i; j++) {
+				if (copy[i].getAge() < copy[j].getAge()) {
+					temp = copy[i];
+					copy[i] = copy[j];
+					copy[j] = temp;
 
 				}
 			}
 		}
 
-		return mem;
+		return copy;
 		// 위와 동일한 방식이지만 내림차순으로 정렬 후 주소 값 리턴
 
 	}
 
 	public Member[] sortGenderDesc() {
-
-		for (int i = 0; i < mem.length; i++) {
-			for (int j = i + 1; j < i; j++) {
+		Member[] copy = mem.clone();
+		Member temp = null;
+		
+		for (int i = 0; i < memberCount; i++) {
+			for (int j = 0; j < i; j++) {
 				int num = 0;
-				if (mem[i].getGender() > mem[j].getGender()) {
-					Member temp = mem[i];
-					mem[i] = mem[j];
-					mem[j] = temp;
+				if (copy[i].getGender() > copy[j].getGender()) {
+					temp = copy[i];
+					copy[i] = copy[j];
+					copy[j] = temp;
 
 				}
 			}
 		}
-		return mem;
+		return copy;
 		// 위와 동일한 방식이지만 성별 별 내림차순으로 정렬 후 주소 값 리턴
 		// (남여 순으로 정렬)
 	}

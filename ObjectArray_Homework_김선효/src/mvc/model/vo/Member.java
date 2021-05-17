@@ -1,3 +1,4 @@
+
 package mvc.model.vo;
 
 public class Member {
@@ -70,7 +71,7 @@ public class Member {
 		this.email = email;
 	}
 	public String information() {
-		return "이름 : "+name+", 나이 : " + age + ", 성별 : " + gender + ", 이메일 : " + email; 
+		return "아이디 : "+ userId +", 이름 : "+name+", 나이 : " + age + ", 성별 : " + gender + ", 이메일 : " + email; 
 	}
 	
 }
