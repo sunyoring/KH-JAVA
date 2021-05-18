@@ -34,7 +34,7 @@ public class Airplane extends Vehicle{
 	@Override
 	public String information() {
 		// TODO Auto-generated method stub
-		return "Airplane [ " + super.information() + ", tire : " + tire +", wing : " + wing +"]";
+		return super.information() + ", tire : " + tire +", wing : " + wing;
 	}
 
 	@Override

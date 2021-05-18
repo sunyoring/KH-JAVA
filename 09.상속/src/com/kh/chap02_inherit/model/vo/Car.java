@@ -1,9 +1,9 @@
 package com.kh.chap02_inherit.model.vo;
 
 public class Car extends Vehicle {
-	
+
 	private int tire;
-	
+
 	public Car() {
 		// TODO Auto-generated constructor stub
 	}
@@ -16,15 +16,14 @@ public class Car extends Vehicle {
 	@Override
 	public String information() {
 		// TODO Auto-generated method stub
-		return super.information() + ",tire : " + tire;
+		return super.information() + ", "
+				+ "tire : " + tire;
 	}
 
 	@Override
 	public void howToMove() {
 		// TODO Auto-generated method stub
-System.out.println("바퀴를 굴려 움직인다.");	
-}
-	
-	
+		System.out.println("바퀴를 굴려 움직인다.");
+	}
 
 }
