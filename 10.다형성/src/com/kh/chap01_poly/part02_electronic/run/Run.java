@@ -15,14 +15,17 @@ public class Run {
 		/*
 		 * ElectronicController ec = new ElectronicController();
 		 * 
-		 * ec.insert(new Desktop("삼성","데스크탑",10000,"Geforce 1070")); ec.insert(new
-		 * NoteBook("LG","그램",20000,3)); ec.insert(new
-		 * Tablet("애플","아이패드",230000,false));
+		 * ec.insert(new Desktop("삼성","데스크탑",10000,"Geforce 1070")); 
+		 * ec.insert(new NoteBook("LG","그램",20000,3)); 
+		 * ec.insert(new Tablet("애플","아이패드",230000,false));
 		 * 
-		 * Desktop d = ec.selectDesktop(); NoteBook n = ec.selectNoteBook(); Tablet t =
-		 * ec.selectTablet();
+		 * Desktop d = ec.selectDesktop(); 
+		 * NoteBook n = ec.selectNoteBook();
+		 * Tablet t = ec.selectTablet();
 		 * 
-		 * System.out.println(d); System.out.println(n); System.out.println(t);
+		 * System.out.println(d);
+		 * System.out.println(n); 
+		 * System.out.println(t);
 		 * 
 		 */
 
