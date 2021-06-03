@@ -11,13 +11,14 @@ import javax.swing.ImageIcon;
 
 public class GoogleAPI {
 
+	
 	public void downloadMap(String location) { //이미지 파일을 다운로드 받는 메소드
 		String imageURL = null;
 		try {
-			if(location.equals("강남병원")) {
-				imageURL = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyABp_X71PUMpwCoerh_KCDCZ5FqJy3hFns&center=%EA%B0%95%EB%82%A8%EB%B3%91%EC%9B%90&zoom=15&size=500x500&scale=2";
+//			if(location.equals("신촌세브란스병원")) {
+				imageURL = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyABp_X71PUMpwCoerh_KCDCZ5FqJy3hFns&center="+URLEncoder.encode(location, "UTF-8") +"location" +  "&zoom=16&size=500x500&scale=2";
 
-			}
+//			}
 		URL url = new URL(imageURL);
 		InputStream is = url.openStream();
 		OutputStream os = new FileOutputStream(location);

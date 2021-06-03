@@ -18,13 +18,14 @@ public class Map extends JFrame{
 	private JPanel panel = new JPanel();
 
 	private GoogleAPI googleAPI = new GoogleAPI();
-	private String location = "강남병원";
 	private JLabel googleMap = new JLabel();
 	
+	private SelectHospital sh = new SelectHospital();
+	private String location = sh.getSelectHospital();
 
 	
-	
 	public void setMap(String location) {
+		
 		
 		googleAPI.downloadMap(location);
 		googleMap.setIcon(googleAPI.getMap(location));
@@ -40,7 +41,6 @@ public class Map extends JFrame{
 
 		
 		setLayout(new BorderLayout());
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		
 		googleAPI.downloadMap(location);
