@@ -14,7 +14,7 @@ public class MainMenu {
 	
 
 	JFrame MFrame = new JFrame();
-	JPanel mainPanel = new JPanel();
+	static JPanel mainPanel = new JPanel(); //메인 패널은 자주 호출될 것이므로 일단 static->직접 호출가능하도록
 
 	JButton bookButton = new JButton("예약하기"); // 예약하기 버튼
 	JButton chackBookButton = new JButton("예약조회"); // 예약조회 버튼
@@ -26,7 +26,7 @@ public class MainMenu {
 
 		MFrame.setTitle("백신 예약 프로그램");
 		MFrame.setSize(900, 600);
-		MFrame.setResizable(false);
+		MFrame.setResizable(false); //화면 크기 조절 잠금
 		MFrame.setLocationRelativeTo(null);
 		MFrame.setVisible(true);
 		MFrame.setDefaultCloseOperation(MFrame.EXIT_ON_CLOSE);
@@ -34,7 +34,8 @@ public class MainMenu {
 		mainPanel.setLayout(null);
 		mainPanel.setVisible(true);
 
-		
+		MFrame.add(mainPanel); //메인 프레임에 메인 패널 추가
+
 		//예약하기 버튼 설정
 		bookButton.setBounds(180, 280, 200, 50);
 		bookButton.setVisible(true);
@@ -44,9 +45,9 @@ public class MainMenu {
 			@Override
 			public void mousePressed(MouseEvent e) {
 
-				mainPanel.setVisible(false);
-				MFrame.add(selectHospital);
-				selectHospital.setVisible(true);
+				mainPanel.setVisible(false); //예약버튼 누르면 메인화면은 안보임
+				MFrame.add(selectHospital); //메인 프레임에 병원(지역)선택 화면 추가
+				selectHospital.setVisible(true); //병원(지역)선택 화면 노출
 				
 				
 			}
@@ -107,8 +108,7 @@ public class MainMenu {
 		});
 		mainPanel.add(logoutButton); // 메인 패널에 로그아웃 버튼 추가
 
-		MFrame.add(mainPanel); //메인 프레임에 메인 패널 추가
-
+	
 	}
 
 }

@@ -9,6 +9,7 @@ import java.net.URLEncoder;
 
 import javax.swing.ImageIcon;
 
+// 이 코드는 수정하지 말아주세요
 public class GoogleAPI {
 
 	

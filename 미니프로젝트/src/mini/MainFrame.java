@@ -13,7 +13,7 @@ public class MainFrame {
 
 	
 	JFrame MFrame = new JFrame();
-	JPanel mainPanel = new JPanel();
+	static JPanel mainPanel = new JPanel(); 
 	JPanel selectHospital  = new SelectHospital();
 
 	

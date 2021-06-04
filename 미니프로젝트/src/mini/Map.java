@@ -1,7 +1,6 @@
 package mini;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -11,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
+//이 코드는 수정하지 말아주세요
 public class Map extends JFrame{
 	
 	private JTextField textField = new JTextField(30);
