@@ -43,22 +43,9 @@ public class SelectHospital extends JPanel { // 병원 선택 화면 패널
 
 	private JOptionPane option = new JOptionPane();
 
-	public String getSelectHospital() { // 각 지역 선택시 해당하는 병원을 주소에 전달하여 위치버튼 실행 시 보여줌
-		switch (combo.getSelectedIndex()) {
-		case 1:
-			return "연세대세브란스병원";
+	public String mapLocation; //지도에 입력 될 키워드
 
-		case 2:
-			return "일산백병원";
-
-		case 3:
-			return "인제대해운대백병원";
-		default:
-			return "서울시";
-
-		}
-
-	}
+	
 
 	public SelectHospital() {
 
@@ -77,8 +64,8 @@ public class SelectHospital extends JPanel { // 병원 선택 화면 패널
 			@Override
 			public void mousePressed(MouseEvent e) {
 
-				map = new Map();
-				map.setLocationRelativeTo(null);
+				map = new Map(mapLocation); //선택된 병원의 이름을 맵의 초기값으로 매개변수로 넣어준다.
+				map.setLocationRelativeTo(null); //맵을 현재 창의 가운데로 생성되게 한다.
 
 			}
 		});
@@ -141,15 +128,21 @@ public class SelectHospital extends JPanel { // 병원 선택 화면 패널
 				case 0:
 					break;
 				case 1:
+					mapLocation = "연세대세브란스병원" ;
+					
 					add(jscp1);
 					table1.setVisible(true);
 					break;
 				case 2:
+					mapLocation = "일산백병원" ;
+
 					add(jscp2);
 					table2.setVisible(true);
 
 					break;
 				case 3:
+					mapLocation = "인제대해운대백병원" ;
+
 					add(jscp3);
 					table3.setVisible(true);
 					break;
@@ -166,4 +159,7 @@ public class SelectHospital extends JPanel { // 병원 선택 화면 패널
 
 	}
 
-}
+
+	}
+
+
