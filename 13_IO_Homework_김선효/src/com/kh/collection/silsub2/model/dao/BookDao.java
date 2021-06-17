@@ -1,12 +1,12 @@
 package com.kh.collection.silsub2.model.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 
-import com.kh.chap04_map.model.vo.Student;
 import com.kh.collection.silsub2.model.vo.Book;
 
 public class BookDao {
@@ -42,13 +42,21 @@ public class BookDao {
 	}
 
 	public void addBook(Book book) {
-
+		bookMap.put(Integer.toString(getLastBookNo()), book);
 	}
 
 	public Book deleteBook(String key) {
-		Book book = null;
-		book = bookMap.get(key);
 
+		Book book = null;
+		Iterator<String> iter = bookMap.keySet().iterator();
+		while (iter.hasNext()) {
+			String s = iter.next();
+			if (s.equals(key)) {
+				book = bookMap.get(s);
+				bookMap.remove(s);
+			}
+
+		}
 		return book;
 
 	}
@@ -59,14 +67,23 @@ public class BookDao {
 
 		while (it1.hasNext()) {
 			Entry<String, Book> entry = (Entry) it1.next();
-			
+
 		}
 		return null;
 
 	}
 
 	public Book selectBook(String key) {
-		return null;
+		Book book = null;
+		Iterator<String> iter = bookMap.keySet().iterator();
+		while (iter.hasNext()) {
+			String s = iter.next();
+			if (s.equals(key)) {
+				book = bookMap.get(s);
+			}
+
+		}
+		return book;
 
 	}
 
@@ -76,6 +93,7 @@ public class BookDao {
 	}
 
 	public ArrayList<Book> sortedBookList() {
+	
 		return null;
 
 	}

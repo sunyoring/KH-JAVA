@@ -43,7 +43,12 @@ public class BookMenu {
 				}
 				break;
 			case 4:
-				bm.searchBook(inputBookTitle());
+				String str = bm.searchBook(inputBookTitle());
+				if(str == null) {
+					System.out.println("조회한 글이 존재하지 않음");
+				}else {
+					System.out.println(bm.selectBook(str));
+				}
 				
 				break;
 			case 5:
@@ -51,7 +56,10 @@ public class BookMenu {
 				if(map == null) {
 					System.out.println("없습니다.");
 				}else{
-					Iterator it = map.iterator;
+					Iterator<String> it = map.keySet().iterator();
+					while(it.hasNext()) {
+						System.out.println(map.get(it));
+					}
 				}
 				break;
 			case 6:
